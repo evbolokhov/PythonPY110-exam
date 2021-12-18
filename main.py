@@ -5,13 +5,27 @@ from faker import Faker
 print(MODEL)
 
 
-# digits = random.sample("1234567890", 4)  # 4 элемента без повторов из заданной коллекции
-# number = int("".join(digits))  # соединяем в одно и конвертируем в число
-# if number < 1000:  # если первая цифра была 0...
-#     number = number * 10  # ...то добавляем его в конец
-# print(number)
 def year():
     print('"year":', random.randint(1900, 2021))
+
+
+def pages():
+    print('"pages":', random.randint(10, 500))
+
+
+def isbn13():
+    fake = Faker()
+    for _ in range(10):
+        print('"isbn13":', fake.numerify(text='%%%-%-%%%%%-%%%-%'))
+
+def rating():
+    print('"rating":', round(random.uniform(0, 5), 1))
+
+
+
+
+def price():
+    print('"price":', round(random.uniform(50, 50000), 1))
 
 def author():
     faker = Faker("RU")
@@ -25,7 +39,12 @@ def title():
         for line in f:  # файл является итератором, который построчно возвращает свое содержимое
             print('"title":', line, end="")
 
-
 if __name__ == "__main__":
-    author()
+
     title()
+    year()
+    pages()
+    isbn13()
+    rating()
+    price()
+    author()
