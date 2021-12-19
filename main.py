@@ -29,8 +29,16 @@ def price():
 
 def author():
     faker = Faker("RU")
-    for i in range(3):
-        print('"author":', faker.name())
+    for i in range(1):
+        print((faker.name()))
+
+
+
+#def task() -> list:
+    # return [get_distance(point) for point in points]
+   # return list(author)  # TODO записать через map
+
+
 
 
 def title():
@@ -47,4 +55,5 @@ if __name__ == "__main__":
     isbn13()
     rating()
     price()
-    author()
+    print(author())
+    #task()
