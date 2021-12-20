@@ -18,7 +18,7 @@ def title():
     with open(filename) as f:
         x = random.randint(0, len(f.readlines())-1)
     with open(filename) as f:
-        return f.readlines()[x]
+        return f.readlines()[x].replace("\n", "")
 
 
 def year():
